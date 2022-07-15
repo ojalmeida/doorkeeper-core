@@ -14,15 +14,15 @@ Doorkeeper is a modular, developer-friendly API Gateway written in Go.
 
 ### Plugins
 
-- **doorkeeper-psql-mapper** -> a plugin that scaffolds _PostgreSQL_ schemas and binds tables to API paths
-- **doorkeeper-mysql-mapper** -> a plugin that scaffolds _MySQL_ schemas and binds tables to API paths
-- **doorkeeper-sqlite-mapper** -> a plugin that scaffolds _Sqlite3_ databases and binds tables to API paths
+- **doorkeeper-psql-mapper** -> a plugin that scaffolds _PostgreSQL_ schemas and binds tables to API paths (**planned**)
+- **doorkeeper-mysql-mapper** -> a plugin that scaffolds _MySQL_ schemas and binds tables to API paths (**planned**)
+- **doorkeeper-sqlite-mapper** -> a plugin that scaffolds _Sqlite3_ databases and binds tables to API paths (**planned**)
 
 ### Middlewares
 
-- **doorkeeper-rate-limiter** -> a middleware to implement different rate limiting approaches (token bucket, fixed window, etc)
-- **doorkeeper-parameter-validator** -> a middleware to verify if parameters sent by users is correct, eliminating posterior validation 
-- **doorkeeper-aaa** -> a middleware to provide Accounting, Authentication and Authorization to endpoints
+- **doorkeeper-rate-limiter** -> a middleware to implement different rate limiting approaches (token bucket, fixed window, etc) (**planned**)
+- **doorkeeper-parameter-validator** -> a middleware to verify if parameters sent by users is correct, eliminating posterior validation (**planned**)
+- **doorkeeper-aaa** -> a middleware to provide Accounting, Authentication and Authorization to endpoints (**planned**)
 
 ## Getting started
 
@@ -139,6 +139,55 @@ func (myMiddleware) Name() string {
 	return "myMiddleware"
 	
 }
+```
+
+The next step is create a configuration file under the path defined in main.go, below a default configuration file:
+
+```json
+
+{
+
+    "timeout": {
+
+        "read": 7,
+        "write": 7,
+        "processing": 7
+
+    },
+
+    "logging": {
+
+        "info" : {
+
+            "path": "/tmp/info.log",
+            "prefix": "doorkeeper [info] | "
+
+        },
+
+        "warn" : {
+
+            "path": "/tmp/warn.log",
+            "prefix": "doorkeeper [warn] | "
+
+        },
+
+        "error" : {
+
+            "path": "/tmp/error.log",
+            "prefix": "doorkeeper [error] | "
+
+        }
+
+    }
+
+}
+
+```
+
+Then compile and executes code
+
+```bash
+go run *.go
 ```
 
 With this done you should be able to receive different responses depending on which endpoint the requests are being made
