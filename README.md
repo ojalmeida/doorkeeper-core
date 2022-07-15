@@ -14,7 +14,7 @@ Doorkeeper is a modular, developer-friendly API Gateway written in Go.
 
 ### Plugins
 
-- **doorkeeper-psql-mapper** -> a plugin that scaffolds _PostgreSQL_ schemas and binds tables to API paths (**planned**)
+- [**doorkeeper-psql-mapper**](https://github.com/ojalmeida/doorkeeper-psql-mapper) -> a plugin that scaffolds _PostgreSQL_ schemas and binds tables to API paths
 - **doorkeeper-mysql-mapper** -> a plugin that scaffolds _MySQL_ schemas and binds tables to API paths (**planned**)
 - **doorkeeper-sqlite-mapper** -> a plugin that scaffolds _Sqlite3_ databases and binds tables to API paths (**planned**)
 
